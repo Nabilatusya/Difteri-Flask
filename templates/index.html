@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Render HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FFB8E0] flex justify-center items-center min-h-screen p-5">
+
+    <div class="w-full max-w-2xl">
+        <!-- Bagian Render HTML -->
+        <section id="render-html" class="bg-white shadow-lg border-4 border-[#BE5985] rounded-2xl p-6 text-center">
+            <h1 class="text-[#BE5985] text-2xl font-bold mb-2">Berhasil menggunakan render templates</h1>
+            <h2 class="text-lg text-[#EC7FA9]">Nama saya <span class="font-semibold">{{ nama }}</span> dan saya berumur <span class="font-semibold">{{ umur }}</span></h2>
+            <p class="text-[#BE5985] text-lg mt-2">Jadi, Bitus tuh type-nya kayak <span class="font-semibold">{{ types[1] }}</span></p>
+        </section>
+
+        <!-- Bagian Perulangan -->
+        <section id="perulangan" class="mt-6 bg-white shadow-lg border-4 border-[#BE5985] rounded-2xl p-6 text-center">
+            <h1 class="text-[#EC7FA9] text-xl font-semibold">Ini adalah tipe saya:</h1>
+            {% for type in types %}
+            <p class="text-[#BE5985] text-lg font-medium mt-2">
+                {{ type }}
+            </p>
+            {% endfor %}
+        </section>
+
+        <!-- Bagian Bentuk Dictionary -->
+        <section id="perulangan" class="mt-6 bg-white shadow-lg border-4 border-[#BE5985] rounded-2xl p-6 text-center">
+            <h1 class="text-[#EC7FA9] text-xl font-semibold">Dalam bentuk dictionary</h1>
+                {% for key,value in dics.items() %}
+                <p class="text-[#BE5985] text-lg font-medium mt-2">
+                    {{ key }} : {{ value }}
+                </p>
+                {% endfor %}
+    </section>
+    </div>
+
+</body>
+</html>
