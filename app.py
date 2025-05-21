@@ -20,11 +20,11 @@ def create_tables():
         db.create_all()
         print("Tabel berhasil dibuat atau sudah ada.")
 
-# ✅ Perbaikan pada `/cluster_all`
+# Perbaikan pada `/cluster_all`
 @app.route('/cluster_all', methods=['GET'])
 def cluster_all():
     try:
-        db.session.expire_all()  # 🔄 Pastikan data terbaru diambil
+        db.session.expire_all()  # Pastikan data terbaru diambil
 
         # Ambil semua tahun yang ada di database
         years = Tahun.query.with_entities(Tahun.tahun_kejadian).distinct().all()
@@ -32,7 +32,7 @@ def cluster_all():
         
         print(f"Debug - List Tahun dari DB: {years}")
 
-        # ✅ Definisikan dictionary sebelum digunakan
+        # Definisikan dictionary sebelum digunakan
         clustering_data = {}
 
         # Untuk setiap tahun, panggil fungsi perform_clustering
